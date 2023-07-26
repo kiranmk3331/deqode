@@ -1,4 +1,22 @@
-<h1>Book Details</h1>
-<p><strong>Title:</strong> <%= @book.title %></p>
-<p><strong>Author:</strong> <%= @book.author %></p>
-<p><strong>Published Year:</strong> <%= @book.published_year %></p>
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+
+<p>
+  <strong>Published Year:</strong>
+  <%= @book.published_year %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

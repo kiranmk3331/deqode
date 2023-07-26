@@ -23,10 +23,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_26_061019) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
-    t.integer "books_id"
+    t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["books_id"], name: "index_reviews_on_books_id"
+    t.index ["book_id"], name: "index_reviews_on_book_id"
   end
 
 end
