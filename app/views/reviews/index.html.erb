@@ -1,10 +1,22 @@
-<h1>Reviews for Book <%= @book.title %></h1>
-<ul>
+<h1>Reviews</h1>
+<p><%= link_to 'New Review', new_book_review_path(@book) %></p>
+<table>
+  <tr>
+    <th>Rating</th>
+    <th>Comment</th>
+    <th colspan="3"></th>
+  </tr>
   <% @reviews.each do |review| %>
-    <li>
-      <strong>Comment:</strong> <%= review.comment %><br>
-      <strong>Review (Rating):</strong> <%= review.review %><br>
-      <strong>Book ID:</strong> <%= review.book_id %>
-    </li>
+    <tr>
+      <td><%= review.rating %></td>
+      <td><%= review.comment %></td>
+      <td><%= link_to 'Show', book_review_path(@book, review) %></td>
+      <td><%= link_to 'Edit', edit_book_review_path(@book, review) %></td>
+      <td><%= link_to 'Destroy', book_review_path(@book, review), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
+
+<br>
+
+<%= link_to 'Back', book_path(@book) %>
